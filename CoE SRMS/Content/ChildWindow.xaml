@@ -1,0 +1,73 @@
+﻿<Window x:Class="CoE_SRMS.Content.ChildWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:coEsrms="clr-namespace:CoE_SRMS"
+        MinWidth="1024"
+        MinHeight="576"
+        TextOptions.TextFormattingMode="Display"
+        Title="Duplicate Attendance Window">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="8*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Current Student" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                     FontSize="50"
+                                     FontWeight="ExtraBold"
+                                     Foreground="{StaticResource AccentColorBrush}"
+                                     Margin="10"
+                                     Grid.Row="0"
+                                     Name="CurrentStudentTitle"/>
+                    <StackPanel Grid.Row="1">
+                        <Label x:Name="firstNameLabelLeft" Content="First Name:" HorizontalAlignment="Right" FontSize="21" Margin="0 60 10 -10" Height="41"/>
+                        <Label x:Name="lastNameLabelLeft" Content="Last Name:" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 -10" Height="46"/>
+                        <Label x:Name="birthdateLabelLeft" Content="Birth Date:" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 -10" Height="44"/>
+                        <Label x:Name="parentNameLabelLeft" Content="Parent Name:" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 -10" Height="46"/>
+                        <Label x:Name="currentSchoolLabelLeft" Content="Current School:" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0" Height="45"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="6*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Duplicate Student" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                     FontSize="50"
+                                     FontWeight="ExtraBold"
+                                     Foreground="{StaticResource AccentColorBrush}"
+                                     Margin="10"
+                                     Grid.Row="0"
+                                     Name="DuplicateStudentTitle"/>
+
+                    <StackPanel Grid.Row="1">
+                        <Border Visibility="Visible"  Name="DuplicatesStudentDropDownBorder" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"  Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="{StaticResource AccentColorBrush}">
+                            <ComboBox Name="DuplicateStudentsDropDown" SelectionChanged="DuplicateStudentsDropDown_Selected" HorizontalAlignment="Center" Text="Students" FontSize="20" IsEditable="True" IsReadOnly="True" Background="Transparent" BorderThickness="0" Foreground="White" Margin="9,0" Width="230"></ComboBox>
+                        </Border>
+                        <Label Name="firstNameLabelRight" Content="First Name:" Grid.Row="1" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                        <Label Name="lastNameLabelRight" Content="Last Name:" Grid.Row="1" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                        <Label Name="birthdateLabelRight" Content="Birth Date:" Grid.Row="1" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                        <Label Name="parentNameLabelRight" Content="Parent Name:" Grid.Row="1" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                        <Label Name="currentSchoolLabelRight" Content="Current School:" Grid.Row="1" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                        <Grid Grid.Row="2">
+                            <Border Name="SubmitDuplicateBorder" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" Margin="0,20,10,10" Width="150" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <Button Name="SubmitDuplicateButton" Click="SubmitDuplicateButton_Click" Content="Select Student" FontSize="15" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                            </Border>
+                            <Border Name="NotDuplicateBorder" HorizontalAlignment="Right" VerticalAlignment="Bottom" Padding="0" Margin="10,20,10,10" Width="150" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <Button Name="NotDuplicateButton" Click="NotDuplicateButton_Click" Content="Not Duplicate" FontSize="15" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+</Window>

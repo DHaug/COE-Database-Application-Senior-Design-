@@ -1,0 +1,17 @@
+﻿<controls:MetroWindow x:Class="CoE_SRMS.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:coEsrms="clr-namespace:CoE_SRMS"
+                      Title="CoE Student Recruitment Management System"
+                      MinWidth="1024"
+                      MinHeight="576"
+                      TextOptions.TextFormattingMode="Display"
+                      GlowBrush ="Black"
+                      TitleCharacterCasing="Normal"
+                      WindowState="Maximized">
+    <Grid>
+        <Frame x:Name="MainContent" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</controls:MetroWindow>
+

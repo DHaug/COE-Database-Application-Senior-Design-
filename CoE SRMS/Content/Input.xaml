@@ -1,0 +1,227 @@
+﻿<Page x:Class="CoE_SRMS.Content.Input"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="576" d:DesignWidth="1024"
+      Title="Input">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Name="BackgroundBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource AccentColorBrush}" Padding="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <TextBlock Text="Camps" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                   FontSize="40"
+                                   FontWeight="ExtraBold"
+                                   Foreground="GhostWhite"
+                                   Margin="78,10,78,0"/>
+                            <Separator Margin="0,10,0,20" Background="#ededf7"/>
+                            <Border Name="AddCampButtonBorder" HorizontalAlignment="Center" Padding="0" Margin="10,20,10,10" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <Button Name="AddCampButton" Click="AddCampButton_Click" Content="Add Camp" FontSize="15" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <TextBlock Text="Student" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                   FontSize="40"
+                                   FontWeight="ExtraBold"
+                                   Foreground="GhostWhite"
+                                   Margin="78,10,78,0"/>
+                            <Separator Margin="0,10,0,20" Background="#ededf7"/>
+                            <Border Name="AddStudentButtonBorder" HorizontalAlignment="Center" Padding="0" Margin="10,20,10,10" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <Button Name="AddStudentButton" Click="AddStudentButton_Click"  Content="Add Student" FontSize="15" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Grid.Row="2">
+                            <TextBlock Text="Attendance" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                   FontSize="40"
+                                   FontWeight="ExtraBold"
+                                   Foreground="GhostWhite"
+                                   Margin="78,10,78,0"/>
+                            <Separator Margin="0,10,0,20" Background="#ededf7"/>
+                            <Border Name="AddAttendanceButtonBorder" HorizontalAlignment="Center" Padding="0" Margin="10,20,10,10" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <Button Name="AddAttendanceButton" Click="AddAttendanceButton_Click" Content="Add Attendace" FontSize="15" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border Visibility="Hidden"  Name="CampsListBorder" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="0" Margin="50,60,0,0" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="{StaticResource AccentColorBrush}">
+                        <ComboBox Name="CampsListComboBox" HorizontalAlignment="Center" Text="Camps" FontSize="20" IsEditable="True" IsReadOnly="True" Background="Transparent" BorderThickness="0" Foreground="White" Margin="9,0" Width="230"></ComboBox>
+                    </Border>
+                    <Border Name="ImportByFileBorder" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="0" Margin="50,0,0,30" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="{StaticResource AccentColorBrush}">
+                        <Button Name="ImportByFileButton" Click="ImportByFileButton_Click" HorizontalAlignment="Center" Content="Import By File" FontSize="20" Background="Transparent" BorderThickness="0" Foreground="White" Margin="9,0" Width="230"></Button>
+                    </Border>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"></RowDefinition>
+                            <RowDefinition Height="9*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Camp Import" HorizontalAlignment="Center"  FontFamily="{StaticResource HeaderFontFamily}" 
+                                   FontSize="50"
+                                   FontWeight="ExtraBold"
+                                   Foreground="{StaticResource AccentColorBrush}"
+                                   Margin="78,10,78,0"
+                                   Grid.Row="0"
+                                   Name="ContentTitle"/>
+                        </StackPanel>
+                        <ScrollViewer Name="ManualCampEntryUI" Grid.Row="1" Visibility="Visible">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0 50 0 0">
+                                    <Label Content="Camp Name:*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Camp Date:*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="0 50 0 0">
+                                    <Border  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CampNameInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CampDateInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" Margin="0 50 0 0">
+                                    <Border Name="SubmitCampButtonBorder" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="0" Margin="50,0,0,30" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="{StaticResource AccentColorBrush}">
+                                        <Button Name="SubmitCampButton" Click="SubmitCampButton_Click" HorizontalAlignment="Center" Content="Submit" FontSize="20" Background="Transparent" BorderThickness="0" Foreground="White" Margin="9,0" Width="230"></Button>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                        <ScrollViewer Name="ManualStudentEntryUI" Grid.Row="1" Visibility="Collapsed">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" Margin="0 5 0 0">
+                                    <Label Content="First Name:*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Last Name:*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Preferred Name:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Email:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Birth Date:*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Gender:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Ethnicity:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Race:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Address:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="City:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="State:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Postal Code:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Home Phone:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Cell Phone:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Parent Name:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Current School*" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Intended Year of Graduation:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Current Grade in School:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="T-Shirt Size:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Insurance:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Potential Engineer:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Student ID:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                    <Label Content="Date Last Contacted:" Grid.Column="0" HorizontalAlignment="Right" FontSize="21" Margin="0 0 10 0"></Label>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="0 5 0 0">
+                                    <Border Name="FirstNameBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="FirstNameInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="LastNameBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="LastNameInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="PreferredNameBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="PreferredNameInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="EmailBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="EmailInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="BirthDateBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="BirthDateInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="GenderBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="GenderInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="EthnicityBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="EthnicityInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="RaceBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="RaceInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="AddressBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="AddressInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="CityBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CityInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="StateBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="StateInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="PostalCodeBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="PostalCodeInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="HomePhoneBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="HomePhoneInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="CellPhoneBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CellPhoneInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="ParentNameBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="ParentNameInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="CurrentSchoolBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CurrentSchoolInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="IntededDateBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="IntendedDateOfGraduationInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="CurrentYearInSchoolBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="CurrentYearInSchoolInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="TShirtSizeBorder"  HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="TShirtSizeInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="InsuraceBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="InsuranceInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <CheckBox Name="PotentialEngineerInput" Margin="0 10 0 10" IsChecked="True"/>
+                                    <Border Name="StudentIDBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="StudentIDInput" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Name="DateLastContactedBorder" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="Transparent" Background="{StaticResource AccentColorBrush}">
+                                        <TextBox Name="DateLastContacted" Background="Transparent" Foreground="White"  HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                                    </Border>
+                                </StackPanel>
+                                <StackPanel Grid.Column="2" Margin="0 5 0 0">
+                                    <Border Name="SubmitButtonBorder" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="0" Margin="50,0,0,30" Width="250" Height="50" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="{StaticResource AccentColorBrush}">
+                                        <Button Name="SubmitButton" Click="SubmitStudentButton_Click" HorizontalAlignment="Center" Content="Submit" FontSize="20" Background="Transparent" BorderThickness="0" Foreground="White" Margin="9,0" Width="230"></Button>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

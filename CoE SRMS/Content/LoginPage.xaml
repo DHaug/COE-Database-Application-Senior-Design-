@@ -1,0 +1,72 @@
+﻿<Page x:Class="CoE_SRMS.Content.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:coESrms="clr-namespace:CoE_SRMS"
+      mc:Ignorable="d" 
+      d:DesignHeight="576" d:DesignWidth="1024"
+      Title="LoginPage">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                <Border Name="BackgroundBorder" Background="{StaticResource AccentColorBrush}" CornerRadius="10" Width="700" Padding="15" Margin="50 50 50 0">
+                    <StackPanel>
+                        <TextBlock Text="Welcome to SDSU's College of Engineering&#10;Student Recruitment Management System" 
+                                   FontFamily="{StaticResource HeaderFontFamily}" 
+                                   FontSize="34"
+                                   Foreground="GhostWhite"
+                                   Margin="0 50 0 0"/>
+                        <Separator Margin="0 20 0 0" Background="#ededf7"/>
+                        <Label  Name="IncorrectLoginLabel" Content="Username or password is incorrect. Please try again." Visibility="Collapsed" VerticalAlignment="Center" Margin="180 10 0 0 " Foreground="Red" FontSize="14"/>
+                        <controls:MetroHeader Margin="50 40 0 0" Header="TextBoxHeader" Width="300">
+                            <controls:MetroHeader.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Margin="0 0 0 0"
+                                                   VerticalAlignment="Center"
+                                                   Text="Username" 
+                                                   FontFamily="{StaticResource HeaderFontFamily}"
+                                                   FontSize ="18"
+                                                   Foreground="GhostWhite"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </controls:MetroHeader.HeaderTemplate>
+                            <Border Name="UsernameBorder" KeyDown="Username_OnKeyPress" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                <TextBox Name="UsernameTextBox" HorizontalContentAlignment="Left" Width="250" HorizontalAlignment="Left" BorderThickness="0"/>
+                            </Border>
+                        </controls:MetroHeader>
+                        <controls:MetroHeader Margin="50 20 0 0" Header="TextBoxHeader" Width="300">
+                            <controls:MetroHeader.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Margin="0 0 0 0"
+                                                   VerticalAlignment="Center"
+                                                   Text="Password"
+                                                   FontFamily="{StaticResource HeaderFontFamily}"
+                                                   FontSize ="18"
+                                                   Foreground="GhostWhite"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </controls:MetroHeader.HeaderTemplate>
+                            <Border Name="PasswordBorder" KeyDown="Password_OnKeyPress" HorizontalAlignment="Left" Padding="5" Width="250" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray"  Background="White">
+                                <PasswordBox Name="PasswordTextBox" HorizontalContentAlignment="Left" BorderThickness="0" BorderBrush="Transparent"  Width="250" HorizontalAlignment="Left"></PasswordBox>
+                            </Border>
+                        </controls:MetroHeader>
+                        <Border Name="LoginButtonBorder"  HorizontalAlignment="Left" Padding="0" Margin="233 30 0 0" Width="200" Height="36" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                            <Button Name="LoginButton"  MouseEnter="OnMouseEnterLoginButton" MouseLeave="OnMouseLeaveLoginButton" Click="OnLoginButtonClick" Content="Log In" FontSize="15" Width="200" Height="26" Margin="0 0 0 0" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" BorderThickness="1" BorderBrush="GhostWhite"/>
+                        </Border>
+                        <Button Name="SignUpButton" Click="OnSignUpButtonClick" Height="21" Margin="210,20,212,10" Padding="-9 0 -3 9">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <TextBlock Style="{StaticResource HyperLinkTextBlock}"  Text="Don't have an account? Sign Up!" FontSize="16" Width="Auto" Height="26" Margin="0,0,5,-5"  Background="Transparent" />
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

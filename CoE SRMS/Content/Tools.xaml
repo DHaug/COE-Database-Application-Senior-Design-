@@ -1,0 +1,128 @@
+﻿<Page x:Class="CoE_SRMS.Content.Tools"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoE_SRMS.Content"
+        mc:Ignorable="d"
+      d:DesignHeight="900" d:DesignWidth="1024"
+        Title="Tools">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border Name="BackBorder" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{StaticResource AccentColorBrush}" CornerRadius="10" Padding="15" Margin="50 50 50 50">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="5,-5,-5,5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="7*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="94*"/>
+                        <ColumnDefinition Width="93*"/>
+                        <ColumnDefinition Width="339*"/>
+                        <ColumnDefinition Width="368*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock HorizontalAlignment="Center" Text="Tools" FontSize="50"  FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Margin="9,0,224,0" Width="106" Grid.Column="0"/>
+                    <TextBlock HorizontalAlignment="Center" Text="File Column Name Resolver" FontSize="30"  FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Margin="113,-5,112,45" Width="362" Grid.Column="3"/>
+                    <StackPanel Grid.Column="3" Grid.Row="0" Margin="10,22,10,10">
+                        <Border x:Name="AddAndButtonBorder"  Padding="0" Margin="0,20,0,0" Width="120" Height="40" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White" HorizontalAlignment="Center">
+                            <Button x:Name="AddAndButton" Width = "120" Content="Import File" FontSize="15" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="40"  HorizontalAlignment="Left"/>
+                        </Border>
+                    </StackPanel>
+
+                    <ListBox Margin="0,0,0,0" Grid.Row="1" Grid.Column="3" Background="{StaticResource AccentColorBrush}">
+                        <ListBoxItem HorizontalAlignment="Center" Background="{StaticResource AccentColorBrush}">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal" HorizontalAlignment="Left" Width="484" Height="48">
+                                <TextBlock Margin="0,10,0,-1" HorizontalAlignment="Left" Text="Input File Columns" FontSize="25"  FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}"  Width="206" Height="39"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,10,0,-3" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="39" Height="41"/>
+                                <TextBlock Margin="20,10,0,0" HorizontalAlignment="Left" Text="Database Columns" FontSize="25"  FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="198"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0" HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal" HorizontalAlignment="Left">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From1" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To1" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From2" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To2" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From3" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To3" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From4" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To4" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From5" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To5" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From6" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To6" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From7" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To7" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From8" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To8" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From9" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To9" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal">
+                                <ComboBox HorizontalAlignment="Left" x:Name="From10" Padding="1" Margin="0,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                                <TextBlock Text="To:" FontSize="30" Margin="20,0,0,0" FontWeight="ExtraBold" Foreground="GhostWhite" FontFamily="{StaticResource HeaderFontFamily}" Width="30"/>
+                                <ComboBox HorizontalAlignment="Left" x:Name="To11" Padding="1" Margin="20,0,0,0" Width="240" Height="40" IsEditable="True" IsReadOnly="True" Text="Table"/>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Margin="0,10,0,0"  HorizontalAlignment="Center" Background="{StaticResource AccentColorBrush}" Width="346">
+                            <StackPanel  Background="{StaticResource AccentColorBrush}" Orientation="Horizontal" Height="50" Width="375">
+                                <Border x:Name="UpdateBorder"  Padding="0" Margin="0,0,0,0" Width="120" Height="40" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                    <Button x:Name="UpdateButton" Width = "120" Content="Update Columns" FontSize="15" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="40" />
+                                </Border>
+                                <Border x:Name="CancelBorder"  Padding="0" Margin="100,0,0,0" Width="120" Height="40" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Background="White">
+                                    <Button x:Name="CancelButton" Width = "120" Content="Cancel Columns" FontSize="15" Style="{StaticResource MetroFlatButton}" Background="GhostWhite" Margin="0,0,0,0" BorderThickness="1" BorderBrush="GhostWhite" Height="40" />
+                                </Border>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+    </Grid>
+</Page>
